@@ -13609,7 +13609,7 @@ struct IVRCompositor_IVRCompositor_028_GetFrameTiming_params
 {
     struct u_iface u_iface;
     int8_t _ret;
-    w_Compositor_FrameTiming_1017 *pTiming;
+    w_Compositor_FrameTiming_251 *pTiming;
     uint32_t unFramesAgo;
 };
 
@@ -13617,7 +13617,7 @@ struct wow64_IVRCompositor_IVRCompositor_028_GetFrameTiming_params
 {
     struct u_iface u_iface;
     int8_t _ret;
-    W32_PTR(w32_Compositor_FrameTiming_1017 *pTiming, pTiming, w32_Compositor_FrameTiming_1017 *);
+    W32_PTR(w32_Compositor_FrameTiming_251 *pTiming, pTiming, w32_Compositor_FrameTiming_251 *);
     uint32_t unFramesAgo;
 };
 
@@ -13625,7 +13625,7 @@ struct IVRCompositor_IVRCompositor_028_GetFrameTimings_params
 {
     struct u_iface u_iface;
     uint32_t _ret;
-    w_Compositor_FrameTiming_1017 *pTiming;
+    w_Compositor_FrameTiming_251 *pTiming;
     uint32_t nFrames;
 };
 
@@ -13633,7 +13633,7 @@ struct wow64_IVRCompositor_IVRCompositor_028_GetFrameTimings_params
 {
     struct u_iface u_iface;
     uint32_t _ret;
-    W32_PTR(w32_Compositor_FrameTiming_1017 *pTiming, pTiming, w32_Compositor_FrameTiming_1017 *);
+    W32_PTR(w32_Compositor_FrameTiming_251 *pTiming, pTiming, w32_Compositor_FrameTiming_251 *);
     uint32_t nFrames;
 };
 

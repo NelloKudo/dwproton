@@ -144,7 +144,7 @@ NTSTATUS wow64_IVRCompositor_IVRCompositor_028_GetFrameTiming( void *args )
 {
     struct wow64_IVRCompositor_IVRCompositor_028_GetFrameTiming_params *params = (struct wow64_IVRCompositor_IVRCompositor_028_GetFrameTiming_params *)args;
     struct u_IVRCompositor_IVRCompositor_028 *iface = (struct u_IVRCompositor_IVRCompositor_028 *)params->u_iface;
-    u_Compositor_FrameTiming_1017 u_pTiming;
+    u_Compositor_FrameTiming_251 u_pTiming;
     if (params->pTiming) u_pTiming = *params->pTiming;
     params->_ret = iface->GetFrameTiming( params->pTiming ? &u_pTiming : nullptr, params->unFramesAgo );
     if (params->pTiming) *params->pTiming = u_pTiming;
@@ -165,7 +165,7 @@ NTSTATUS wow64_IVRCompositor_IVRCompositor_028_GetFrameTimings( void *args )
 {
     struct wow64_IVRCompositor_IVRCompositor_028_GetFrameTimings_params *params = (struct wow64_IVRCompositor_IVRCompositor_028_GetFrameTimings_params *)args;
     struct u_IVRCompositor_IVRCompositor_028 *iface = (struct u_IVRCompositor_IVRCompositor_028 *)params->u_iface;
-    u_Compositor_FrameTiming_1017 u_pTiming;
+    u_Compositor_FrameTiming_251 u_pTiming;
     if (params->pTiming) u_pTiming = *params->pTiming;
     params->_ret = iface->GetFrameTimings( params->pTiming ? &u_pTiming : nullptr, params->nFrames );
     if (params->pTiming) *params->pTiming = u_pTiming;
