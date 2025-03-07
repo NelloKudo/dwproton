@@ -1157,6 +1157,7 @@ XrResult WINAPI xrEnumerateSwapchainImages(XrSwapchain swapchain,
     our_vk = malloc(sizeof(*our_vk) * image_count);
     for (i = 0; i < image_count; ++i) {
       our_vk[i].type = XR_TYPE_SWAPCHAIN_IMAGE_VULKAN_KHR;
+      our_vk[i].next = NULL;
     }
 
     params.imageCapacityInput = image_count;
