@@ -28,13 +28,13 @@ $$(OBJ)/.$(1)-$(3)-configure: $$(OBJ)/.wine-$$(HOST_ARCH)-tools
 	    -e '/^x86_64_CFLAGS/c x86_64_CFLAGS = $$($(2)_x86_64_INCFLAGS) $$($(2)_CFLAGS) $$(x86_64_CFLAGS) $$(CFLAGS)' \
 	    -e '/^x86_64_CPPFLAGS/c x86_64_CPPFLAGS = $$($(2)_x86_64_INCFLAGS) $$($(2)_CFLAGS) $$(x86_64_CFLAGS) $$(CFLAGS)' \
 	    -e '/^x86_64_CXXFLAGS/c x86_64_CXXFLAGS = $$($(2)_x86_64_INCFLAGS) -std=c++17 $$($(2)_CFLAGS) $$(x86_64_CFLAGS) $$(CFLAGS)' \
-	    -e '/^x86_64_LDFLAGS/c x86_64_LDFLAGS = $$($(2)_x86_64-windows_LIBFLAGS) $$($(2)_x86_64_LIBFLAGS) $$($(2)_LDFLAGS) $$(x86_64_LDFLAGS) $$(LDFLAGS)' \
+	    -e '/^x86_64_LDFLAGS/c x86_64_LDFLAGS = $$($(2)_x86_64-windows_LIBFLAGS) $$($(2)_x86_64_LIBFLAGS) $$(x86_64_LDFLAGS) $$(LDFLAGS)' \
 	    \
 	    -e '/^i386_CC/a i386_CXX = $$(i386-windows_TARGET)-g++' \
 	    -e '/^i386_CFLAGS/c i386_CFLAGS = $$($(2)_i386_INCFLAGS) $$($(2)_CFLAGS) $$(i386_CFLAGS) $$(CFLAGS)' \
 	    -e '/^i386_CPPFLAGS/c i386_CPPFLAGS = $$($(2)_i386_INCFLAGS) $$($(2)_CFLAGS) $$(i386_CFLAGS) $$(CFLAGS)' \
 	    -e '/^i386_CXXFLAGS/c i386_CXXFLAGS = $$($(2)_i386_INCFLAGS) -std=c++17 $$($(2)_CFLAGS) $$(i386_CFLAGS) $$(CFLAGS)' \
-	    -e '/^i386_LDFLAGS/c i386_LDFLAGS = $$($(2)_i386-windows_LIBFLAGS) $$($(2)_i386_LIBFLAGS) $$($(2)_LDFLAGS) $$(i386_LDFLAGS) $$(LDFLAGS)' \
+	    -e '/^i386_LDFLAGS/c i386_LDFLAGS = $$($(2)_i386-windows_LIBFLAGS) $$($(2)_i386_LIBFLAGS) $$(i386_LDFLAGS) $$(LDFLAGS)' \
 	    \
 	    -e 's@UNIXLDFLAGS =@UNIXLDFLAGS = -L$$(WINE_$(3)_LIBDIR)/wine/$(3)-unix -l:ntdll.so@' \
 	    $$(WINE_$(3)_OBJ)/Makefile > $$($(2)_$(3)_OBJ)/Makefile
