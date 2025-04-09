@@ -249,6 +249,16 @@ FFMPEG_CONFIGURE_ARGS := \
 	--disable-inline-asm \
 	--enable-demuxer=matroska \
 
+FFMPEG_i386-unix_CONFIGURE_ARGS := \
+	--cross-prefix=i686-linux-gnu- \
+	--arch=x86 \
+	--target-os=linux
+
+FFMPEG_x86_64-unix_CONFIGURE_ARGS := \
+	--cross-prefix=x86_64-linux-gnu- \
+	--arch=x86_64 \
+	--target-os=linux
+
 $(eval $(call rules-source,ffmpeg,$(SRCDIR)/ffmpeg))
 $(eval $(call rules-configure,ffmpeg,i386,unix))
 $(eval $(call rules-configure,ffmpeg,x86_64,unix))
