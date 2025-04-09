@@ -134,6 +134,7 @@ $(2)_$(3)_ENV = \
     LD_LIBRARY_PATH="$$(call list-join,:,$$(foreach d,$$($(2)_$(3)_HOST_DEPS),$$($$(d)_$$(HOST_ARCH)_LIBDIR)/$$($$(HOST_ARCH)-unix_LIBDIR)),,:)$$$$LD_LIBRARY_PATH" \
     PKG_CONFIG_PATH="$$(call list-join,:,$$(foreach d,$$($(2)_$(3)_DEPS),$$($$(d)_$(3)_LIBDIR)/$$($(3)-$(4)_LIBDIR)/pkgconfig))" \
     PKG_CONFIG_LIBDIR="/usr/lib/$$($(3)-$(4)_LIBDIR)/pkgconfig:/usr/share/pkgconfig" \
+    CMAKE_PREFIX_PATH="$$(call list-join,:,$$(foreach d,$$($(2)_$(3)_DEPS),$$($$(d)_$(3)_DST)))" \
     CFLAGS="$$($(2)_$(3)_INCFLAGS) $$($(2)_CFLAGS) $$($(3)_CFLAGS) $$(CFLAGS)" \
     CPPFLAGS="$$($(2)_$(3)_INCFLAGS) $$($(2)_CFLAGS) $$($(3)_CFLAGS) $$(CFLAGS)" \
     CXXFLAGS="$$($(2)_$(3)_INCFLAGS) -std=c++17 $$($(2)_CFLAGS) $$($(3)_CFLAGS) $$(CFLAGS)" \
