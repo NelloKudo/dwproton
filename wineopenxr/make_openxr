@@ -64,7 +64,7 @@ from enum import Enum
 LOGGER = logging.Logger("openxr")
 LOGGER.addHandler(logging.StreamHandler())
 
-XR_XML_VERSION = "1.1.36"
+XR_XML_VERSION = "1.1.47"
 WINE_XR_VERSION = (1, 1)
 
 # Filenames to create.
@@ -1631,7 +1631,7 @@ class XrParam(XrVariable):
         # Determine a format string used by code generation for traces.
         # 64-bit types need a conversion function.
         self.format_conv = None
-        if self.is_static_array() or self.is_pointer():
+        if self.is_static_array() or self.is_pointer() or self.type in [ "XrFutureEXT" ]:
             self.format_str = "%p"
         else:
             if self.type_info["category"] in ["bitmask"]:
@@ -1667,7 +1667,7 @@ class XrParam(XrVariable):
                 self.format_conv = "wine_dbgstr_longlong({0})"
             elif self.type in ["HANDLE", "VkInstance"]:
                 self.format_str = "%p"
-            elif self.type in ["XrSystemId", "XrPath", "XrTime", "XrDuration", "XrControllerModelKeyMSFT", "XrMarkerML"]:
+            elif self.type in ["XrSystemId", "XrPath", "XrTime", "XrDuration", "XrControllerModelKeyMSFT", "XrMarkerML", "XrSpatialEntityIdBD"]:
                 self.format_str = "0x%s"
                 self.format_conv = "wine_dbgstr_longlong({0})"
             elif self.type in ["XrVector2f"]:

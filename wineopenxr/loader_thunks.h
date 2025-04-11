@@ -3,7 +3,7 @@
  * This file is generated from Vulkan xr.xml file covered
  * by the following copyright and permission notice:
  *
- * Copyright (c) 2017-2024, The Khronos Group Inc.
+ * Copyright (c) 2017-2025 The Khronos Group Inc.
  *
  * SPDX-License-Identifier: Apache-2.0 OR MIT
  *
@@ -27,6 +27,7 @@ enum unix_call
     unix_init,
     unix_xrAcquireEnvironmentDepthImageMETA,
     unix_xrAcquireSwapchainImage,
+    unix_xrAllocateWorldMeshBufferML,
     unix_xrApplyForceFeedbackCurlMNDX,
     unix_xrApplyHapticFeedback,
     unix_xrAttachSessionActionSets,
@@ -34,19 +35,25 @@ enum unix_call
     unix_xrBeginPlaneDetectionEXT,
     unix_xrBeginSession,
     unix_xrCancelFutureEXT,
+    unix_xrCaptureSceneAsyncBD,
+    unix_xrCaptureSceneCompleteBD,
     unix_xrChangeVirtualKeyboardTextContextMETA,
     unix_xrClearSpatialAnchorStoreMSFT,
     unix_xrComputeNewSceneMSFT,
     unix_xrCreateAction,
     unix_xrCreateActionSet,
     unix_xrCreateActionSpace,
+    unix_xrCreateAnchorSpaceBD,
+    unix_xrCreateBodyTrackerBD,
     unix_xrCreateBodyTrackerFB,
+    unix_xrCreateBodyTrackerHTC,
     unix_xrCreateEnvironmentDepthProviderMETA,
     unix_xrCreateEnvironmentDepthSwapchainMETA,
     unix_xrCreateExportedLocalizationMapML,
     unix_xrCreateEyeTrackerFB,
     unix_xrCreateFaceTracker2FB,
     unix_xrCreateFaceTrackerFB,
+    unix_xrCreateFacialExpressionClientML,
     unix_xrCreateFacialTrackerHTC,
     unix_xrCreateFoveationProfileFB,
     unix_xrCreateGeometryInstanceFB,
@@ -65,29 +72,43 @@ enum unix_call
     unix_xrCreateReferenceSpace,
     unix_xrCreateSceneMSFT,
     unix_xrCreateSceneObserverMSFT,
+    unix_xrCreateSenseDataProviderBD,
     unix_xrCreateSession,
     unix_xrCreateSpaceUserFB,
+    unix_xrCreateSpatialAnchorAsyncBD,
+    unix_xrCreateSpatialAnchorCompleteBD,
     unix_xrCreateSpatialAnchorFB,
     unix_xrCreateSpatialAnchorFromPersistedNameMSFT,
     unix_xrCreateSpatialAnchorHTC,
     unix_xrCreateSpatialAnchorMSFT,
     unix_xrCreateSpatialAnchorSpaceMSFT,
     unix_xrCreateSpatialAnchorStoreConnectionMSFT,
+    unix_xrCreateSpatialAnchorsAsyncML,
+    unix_xrCreateSpatialAnchorsCompleteML,
+    unix_xrCreateSpatialAnchorsStorageML,
+    unix_xrCreateSpatialEntityAnchorBD,
     unix_xrCreateSpatialGraphNodeSpaceMSFT,
     unix_xrCreateSwapchain,
     unix_xrCreateTriangleMeshFB,
     unix_xrCreateVirtualKeyboardMETA,
     unix_xrCreateVirtualKeyboardSpaceMETA,
+    unix_xrCreateWorldMeshDetectorML,
+    unix_xrDeleteSpatialAnchorsAsyncML,
+    unix_xrDeleteSpatialAnchorsCompleteML,
     unix_xrDeserializeSceneMSFT,
     unix_xrDestroyAction,
     unix_xrDestroyActionSet,
+    unix_xrDestroyAnchorBD,
+    unix_xrDestroyBodyTrackerBD,
     unix_xrDestroyBodyTrackerFB,
+    unix_xrDestroyBodyTrackerHTC,
     unix_xrDestroyEnvironmentDepthProviderMETA,
     unix_xrDestroyEnvironmentDepthSwapchainMETA,
     unix_xrDestroyExportedLocalizationMapML,
     unix_xrDestroyEyeTrackerFB,
     unix_xrDestroyFaceTracker2FB,
     unix_xrDestroyFaceTrackerFB,
+    unix_xrDestroyFacialExpressionClientML,
     unix_xrDestroyFacialTrackerHTC,
     unix_xrDestroyFoveationProfileFB,
     unix_xrDestroyGeometryInstanceFB,
@@ -101,15 +122,21 @@ enum unix_call
     unix_xrDestroyPlaneDetectorEXT,
     unix_xrDestroySceneMSFT,
     unix_xrDestroySceneObserverMSFT,
+    unix_xrDestroySenseDataProviderBD,
+    unix_xrDestroySenseDataSnapshotBD,
     unix_xrDestroySession,
     unix_xrDestroySpace,
     unix_xrDestroySpaceUserFB,
     unix_xrDestroySpatialAnchorMSFT,
     unix_xrDestroySpatialAnchorStoreConnectionMSFT,
+    unix_xrDestroySpatialAnchorsStorageML,
     unix_xrDestroySpatialGraphNodeBindingMSFT,
     unix_xrDestroySwapchain,
     unix_xrDestroyTriangleMeshFB,
     unix_xrDestroyVirtualKeyboardMETA,
+    unix_xrDestroyWorldMeshDetectorML,
+    unix_xrDownloadSharedSpatialAnchorAsyncBD,
+    unix_xrDownloadSharedSpatialAnchorCompleteBD,
     unix_xrEnableLocalizationEventsML,
     unix_xrEnableUserCalibrationEventsML,
     unix_xrEndFrame,
@@ -129,20 +156,24 @@ enum unix_call
     unix_xrEnumerateReprojectionModesMSFT,
     unix_xrEnumerateSceneComputeFeaturesMSFT,
     unix_xrEnumerateSpaceSupportedComponentsFB,
+    unix_xrEnumerateSpatialEntityComponentTypesBD,
     unix_xrEnumerateSwapchainFormats,
     unix_xrEnumerateSwapchainImages,
     unix_xrEnumerateViewConfigurationViews,
     unix_xrEnumerateViewConfigurations,
     unix_xrEnumerateViveTrackerPathsHTCX,
     unix_xrEraseSpaceFB,
+    unix_xrFreeWorldMeshBufferML,
     unix_xrGeometryInstanceSetTransformFB,
     unix_xrGetActionStateBoolean,
     unix_xrGetActionStateFloat,
     unix_xrGetActionStatePose,
     unix_xrGetActionStateVector2f,
+    unix_xrGetAnchorUuidBD,
     unix_xrGetAudioInputDeviceGuidOculus,
     unix_xrGetAudioOutputDeviceGuidOculus,
     unix_xrGetBodySkeletonFB,
+    unix_xrGetBodySkeletonHTC,
     unix_xrGetControllerModelKeyMSFT,
     unix_xrGetControllerModelPropertiesMSFT,
     unix_xrGetControllerModelStateMSFT,
@@ -154,6 +185,7 @@ enum unix_call
     unix_xrGetEyeGazesFB,
     unix_xrGetFaceExpressionWeights2FB,
     unix_xrGetFaceExpressionWeightsFB,
+    unix_xrGetFacialExpressionBlendShapePropertiesML,
     unix_xrGetFacialExpressionsHTC,
     unix_xrGetFoveationEyeTrackedStateMETA,
     unix_xrGetHandMeshFB,
@@ -172,6 +204,7 @@ enum unix_call
     unix_xrGetPlaneDetectionStateEXT,
     unix_xrGetPlaneDetectionsEXT,
     unix_xrGetPlanePolygonBufferEXT,
+    unix_xrGetQueriedSenseDataBD,
     unix_xrGetRecommendedLayerResolutionMETA,
     unix_xrGetReferenceSpaceBoundsRect,
     unix_xrGetRenderModelPropertiesFB,
@@ -180,6 +213,7 @@ enum unix_call
     unix_xrGetSceneMarkerDecodedStringMSFT,
     unix_xrGetSceneMarkerRawDataMSFT,
     unix_xrGetSceneMeshBuffersMSFT,
+    unix_xrGetSenseDataProviderStateBD,
     unix_xrGetSerializedSceneFragmentDataMSFT,
     unix_xrGetSpaceBoundary2DFB,
     unix_xrGetSpaceBoundingBox2DFB,
@@ -192,6 +226,9 @@ enum unix_call
     unix_xrGetSpaceUserIdFB,
     unix_xrGetSpaceUuidFB,
     unix_xrGetSpatialAnchorNameHTC,
+    unix_xrGetSpatialAnchorStateML,
+    unix_xrGetSpatialEntityComponentDataBD,
+    unix_xrGetSpatialEntityUuidBD,
     unix_xrGetSpatialGraphNodeBindingPropertiesMSFT,
     unix_xrGetSwapchainStateFB,
     unix_xrGetSystem,
@@ -208,10 +245,13 @@ enum unix_call
     unix_xrGetVulkanGraphicsRequirements2KHR,
     unix_xrGetVulkanGraphicsRequirementsKHR,
     unix_xrGetVulkanInstanceExtensionsKHR,
+    unix_xrGetWorldMeshBufferRecommendSizeML,
     unix_xrImportLocalizationMapML,
     unix_xrLoadControllerModelMSFT,
     unix_xrLoadRenderModelFB,
+    unix_xrLocateBodyJointsBD,
     unix_xrLocateBodyJointsFB,
+    unix_xrLocateBodyJointsHTC,
     unix_xrLocateHandJointsEXT,
     unix_xrLocateSceneComponentsMSFT,
     unix_xrLocateSpace,
@@ -226,18 +266,30 @@ enum unix_call
     unix_xrPassthroughStartFB,
     unix_xrPathToString,
     unix_xrPerfSettingsSetPerformanceLevelEXT,
+    unix_xrPersistSpatialAnchorAsyncBD,
+    unix_xrPersistSpatialAnchorCompleteBD,
     unix_xrPersistSpatialAnchorMSFT,
     unix_xrPollEvent,
     unix_xrPollFutureEXT,
+    unix_xrPublishSpatialAnchorsAsyncML,
+    unix_xrPublishSpatialAnchorsCompleteML,
     unix_xrQueryLocalizationMapsML,
     unix_xrQueryPerformanceMetricsCounterMETA,
+    unix_xrQuerySenseDataAsyncBD,
+    unix_xrQuerySenseDataCompleteBD,
     unix_xrQuerySpacesFB,
+    unix_xrQuerySpatialAnchorsAsyncML,
+    unix_xrQuerySpatialAnchorsCompleteML,
     unix_xrQuerySystemTrackedKeyboardFB,
     unix_xrReleaseSwapchainImage,
     unix_xrRequestDisplayRefreshRateFB,
     unix_xrRequestExitSession,
     unix_xrRequestMapLocalizationML,
     unix_xrRequestSceneCaptureFB,
+    unix_xrRequestWorldMeshAsyncML,
+    unix_xrRequestWorldMeshCompleteML,
+    unix_xrRequestWorldMeshStateAsyncML,
+    unix_xrRequestWorldMeshStateCompleteML,
     unix_xrResultToString,
     unix_xrRetrieveSpaceQueryResultsFB,
     unix_xrSaveSpaceFB,
@@ -257,16 +309,28 @@ enum unix_call
     unix_xrSetMarkerTrackingVARJO,
     unix_xrSetPerformanceMetricsStateMETA,
     unix_xrSetSpaceComponentStatusFB,
+    unix_xrSetSystemNotificationsML,
     unix_xrSetTrackingOptimizationSettingsHintQCOM,
     unix_xrSetViewOffsetVARJO,
     unix_xrSetVirtualKeyboardModelVisibilityMETA,
     unix_xrShareSpacesFB,
+    unix_xrShareSpacesMETA,
+    unix_xrShareSpatialAnchorAsyncBD,
+    unix_xrShareSpatialAnchorCompleteBD,
     unix_xrSnapshotMarkerDetectorML,
+    unix_xrStartColocationAdvertisementMETA,
+    unix_xrStartColocationDiscoveryMETA,
     unix_xrStartEnvironmentDepthProviderMETA,
+    unix_xrStartSenseDataProviderAsyncBD,
+    unix_xrStartSenseDataProviderCompleteBD,
+    unix_xrStopColocationAdvertisementMETA,
+    unix_xrStopColocationDiscoveryMETA,
     unix_xrStopEnvironmentDepthProviderMETA,
     unix_xrStopHapticFeedback,
+    unix_xrStopSenseDataProviderBD,
     unix_xrStringToPath,
     unix_xrStructureTypeToString,
+    unix_xrStructureTypeToString2KHR,
     unix_xrSuggestInteractionProfileBindings,
     unix_xrSuggestVirtualKeyboardLocationMETA,
     unix_xrSyncActions,
@@ -278,9 +342,13 @@ enum unix_call
     unix_xrTriangleMeshGetIndexBufferFB,
     unix_xrTriangleMeshGetVertexBufferFB,
     unix_xrTryCreateSpatialGraphStaticNodeBindingMSFT,
+    unix_xrUnpersistSpatialAnchorAsyncBD,
+    unix_xrUnpersistSpatialAnchorCompleteBD,
     unix_xrUnpersistSpatialAnchorMSFT,
     unix_xrUpdateHandMeshMSFT,
     unix_xrUpdatePassthroughColorLutMETA,
+    unix_xrUpdateSpatialAnchorsExpirationAsyncML,
+    unix_xrUpdateSpatialAnchorsExpirationCompleteML,
     unix_xrUpdateSwapchainFB,
     unix_xrWaitFrame,
     unix_xrWaitSwapchainImage,
@@ -300,6 +368,14 @@ struct xrAcquireSwapchainImage_params
     XrSwapchain swapchain;
     const XrSwapchainImageAcquireInfo *acquireInfo;
     uint32_t *index;
+    XrResult result;
+};
+
+struct xrAllocateWorldMeshBufferML_params
+{
+    XrWorldMeshDetectorML detector;
+    const XrWorldMeshBufferSizeML *size;
+    XrWorldMeshBufferML *buffer;
     XrResult result;
 };
 
@@ -353,6 +429,22 @@ struct xrCancelFutureEXT_params
     XrResult result;
 };
 
+struct xrCaptureSceneAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSceneCaptureInfoBD *info;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrCaptureSceneCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrFutureCompletionEXT *completion;
+    XrResult result;
+};
+
 struct xrChangeVirtualKeyboardTextContextMETA_params
 {
     XrVirtualKeyboardMETA keyboard;
@@ -397,11 +489,35 @@ struct xrCreateActionSpace_params
     XrResult result;
 };
 
+struct xrCreateAnchorSpaceBD_params
+{
+    XrSession session;
+    const XrAnchorSpaceCreateInfoBD *createInfo;
+    XrSpace *space;
+    XrResult result;
+};
+
+struct xrCreateBodyTrackerBD_params
+{
+    XrSession session;
+    const XrBodyTrackerCreateInfoBD *createInfo;
+    XrBodyTrackerBD *bodyTracker;
+    XrResult result;
+};
+
 struct xrCreateBodyTrackerFB_params
 {
     XrSession session;
     const XrBodyTrackerCreateInfoFB *createInfo;
     XrBodyTrackerFB *bodyTracker;
+    XrResult result;
+};
+
+struct xrCreateBodyTrackerHTC_params
+{
+    XrSession session;
+    const XrBodyTrackerCreateInfoHTC *createInfo;
+    XrBodyTrackerHTC *bodyTracker;
     XrResult result;
 };
 
@@ -450,6 +566,14 @@ struct xrCreateFaceTrackerFB_params
     XrSession session;
     const XrFaceTrackerCreateInfoFB *createInfo;
     XrFaceTrackerFB *faceTracker;
+    XrResult result;
+};
+
+struct xrCreateFacialExpressionClientML_params
+{
+    XrSession session;
+    const XrFacialExpressionClientCreateInfoML *createInfo;
+    XrFacialExpressionClientML *facialExpressionClient;
     XrResult result;
 };
 
@@ -596,6 +720,14 @@ struct xrCreateSceneObserverMSFT_params
     XrResult result;
 };
 
+struct xrCreateSenseDataProviderBD_params
+{
+    XrSession session;
+    const XrSenseDataProviderCreateInfoBD *createInfo;
+    XrSenseDataProviderBD *provider;
+    XrResult result;
+};
+
 struct xrCreateSession_params
 {
     XrInstance instance;
@@ -609,6 +741,22 @@ struct xrCreateSpaceUserFB_params
     XrSession session;
     const XrSpaceUserCreateInfoFB *info;
     XrSpaceUserFB *user;
+    XrResult result;
+};
+
+struct xrCreateSpatialAnchorAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSpatialAnchorCreateInfoBD *info;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrCreateSpatialAnchorCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrSpatialAnchorCreateCompletionBD *completion;
     XrResult result;
 };
 
@@ -659,6 +807,38 @@ struct xrCreateSpatialAnchorStoreConnectionMSFT_params
     XrResult result;
 };
 
+struct xrCreateSpatialAnchorsAsyncML_params
+{
+    XrSession session;
+    const XrSpatialAnchorsCreateInfoBaseHeaderML *createInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrCreateSpatialAnchorsCompleteML_params
+{
+    XrSession session;
+    XrFutureEXT future;
+    XrCreateSpatialAnchorsCompletionML *completion;
+    XrResult result;
+};
+
+struct xrCreateSpatialAnchorsStorageML_params
+{
+    XrSession session;
+    const XrSpatialAnchorsCreateStorageInfoML *createInfo;
+    XrSpatialAnchorsStorageML *storage;
+    XrResult result;
+};
+
+struct xrCreateSpatialEntityAnchorBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSpatialEntityAnchorCreateInfoBD *createInfo;
+    XrAnchorBD *anchor;
+    XrResult result;
+};
+
 struct xrCreateSpatialGraphNodeSpaceMSFT_params
 {
     XrSession session;
@@ -700,6 +880,30 @@ struct xrCreateVirtualKeyboardSpaceMETA_params
     XrResult result;
 };
 
+struct xrCreateWorldMeshDetectorML_params
+{
+    XrSession session;
+    const XrWorldMeshDetectorCreateInfoML *createInfo;
+    XrWorldMeshDetectorML *detector;
+    XrResult result;
+};
+
+struct xrDeleteSpatialAnchorsAsyncML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    const XrSpatialAnchorsDeleteInfoML *deleteInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrDeleteSpatialAnchorsCompleteML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    XrFutureEXT future;
+    XrSpatialAnchorsDeleteCompletionML *completion;
+    XrResult result;
+};
+
 struct xrDeserializeSceneMSFT_params
 {
     XrSceneObserverMSFT sceneObserver;
@@ -719,9 +923,27 @@ struct xrDestroyActionSet_params
     XrResult result;
 };
 
+struct xrDestroyAnchorBD_params
+{
+    XrAnchorBD anchor;
+    XrResult result;
+};
+
+struct xrDestroyBodyTrackerBD_params
+{
+    XrBodyTrackerBD bodyTracker;
+    XrResult result;
+};
+
 struct xrDestroyBodyTrackerFB_params
 {
     XrBodyTrackerFB bodyTracker;
+    XrResult result;
+};
+
+struct xrDestroyBodyTrackerHTC_params
+{
+    XrBodyTrackerHTC bodyTracker;
     XrResult result;
 };
 
@@ -758,6 +980,12 @@ struct xrDestroyFaceTracker2FB_params
 struct xrDestroyFaceTrackerFB_params
 {
     XrFaceTrackerFB faceTracker;
+    XrResult result;
+};
+
+struct xrDestroyFacialExpressionClientML_params
+{
+    XrFacialExpressionClientML facialExpressionClient;
     XrResult result;
 };
 
@@ -839,6 +1067,18 @@ struct xrDestroySceneObserverMSFT_params
     XrResult result;
 };
 
+struct xrDestroySenseDataProviderBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrResult result;
+};
+
+struct xrDestroySenseDataSnapshotBD_params
+{
+    XrSenseDataSnapshotBD snapshot;
+    XrResult result;
+};
+
 struct xrDestroySession_params
 {
     XrSession session;
@@ -869,6 +1109,12 @@ struct xrDestroySpatialAnchorStoreConnectionMSFT_params
     XrResult result;
 };
 
+struct xrDestroySpatialAnchorsStorageML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    XrResult result;
+};
+
 struct xrDestroySpatialGraphNodeBindingMSFT_params
 {
     XrSpatialGraphNodeBindingMSFT nodeBinding;
@@ -890,6 +1136,28 @@ struct xrDestroyTriangleMeshFB_params
 struct xrDestroyVirtualKeyboardMETA_params
 {
     XrVirtualKeyboardMETA keyboard;
+    XrResult result;
+};
+
+struct xrDestroyWorldMeshDetectorML_params
+{
+    XrWorldMeshDetectorML detector;
+    XrResult result;
+};
+
+struct xrDownloadSharedSpatialAnchorAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSharedSpatialAnchorDownloadInfoBD *info;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrDownloadSharedSpatialAnchorCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrFutureCompletionEXT *completion;
     XrResult result;
 };
 
@@ -1060,6 +1328,16 @@ struct xrEnumerateSpaceSupportedComponentsFB_params
     XrResult result;
 };
 
+struct xrEnumerateSpatialEntityComponentTypesBD_params
+{
+    XrSenseDataSnapshotBD snapshot;
+    XrSpatialEntityIdBD entityId;
+    uint32_t componentTypeCapacityInput;
+    uint32_t *componentTypeCountOutput;
+    XrSpatialEntityComponentTypeBD *componentTypes;
+    XrResult result;
+};
+
 struct xrEnumerateSwapchainFormats_params
 {
     XrSession session;
@@ -1116,6 +1394,13 @@ struct xrEraseSpaceFB_params
     XrResult result;
 };
 
+struct xrFreeWorldMeshBufferML_params
+{
+    XrWorldMeshDetectorML detector;
+    const XrWorldMeshBufferML *buffer;
+    XrResult result;
+};
+
 struct xrGeometryInstanceSetTransformFB_params
 {
     XrGeometryInstanceFB instance;
@@ -1155,6 +1440,13 @@ struct xrGetActionStateVector2f_params
     XrResult result;
 };
 
+struct xrGetAnchorUuidBD_params
+{
+    XrAnchorBD anchor;
+    XrUuidEXT *uuid;
+    XrResult result;
+};
+
 struct xrGetAudioInputDeviceGuidOculus_params
 {
     XrInstance instance;
@@ -1173,6 +1465,15 @@ struct xrGetBodySkeletonFB_params
 {
     XrBodyTrackerFB bodyTracker;
     XrBodySkeletonFB *skeleton;
+    XrResult result;
+};
+
+struct xrGetBodySkeletonHTC_params
+{
+    XrBodyTrackerHTC bodyTracker;
+    XrSpace baseSpace;
+    uint32_t skeletonGenerationId;
+    XrBodySkeletonHTC *skeleton;
     XrResult result;
 };
 
@@ -1260,6 +1561,15 @@ struct xrGetFaceExpressionWeightsFB_params
     XrFaceTrackerFB faceTracker;
     const XrFaceExpressionInfoFB *expressionInfo;
     XrFaceExpressionWeightsFB *expressionWeights;
+    XrResult result;
+};
+
+struct xrGetFacialExpressionBlendShapePropertiesML_params
+{
+    XrFacialExpressionClientML facialExpressionClient;
+    const XrFacialExpressionBlendShapeGetInfoML *blendShapeGetInfo;
+    uint32_t blendShapeCount;
+    XrFacialExpressionBlendShapePropertiesML *blendShapes;
     XrResult result;
 };
 
@@ -1405,6 +1715,14 @@ struct xrGetPlanePolygonBufferEXT_params
     XrResult result;
 };
 
+struct xrGetQueriedSenseDataBD_params
+{
+    XrSenseDataSnapshotBD snapshot;
+    XrQueriedSenseDataGetInfoBD *getInfo;
+    XrQueriedSenseDataBD *queriedSenseData;
+    XrResult result;
+};
+
 struct xrGetRecommendedLayerResolutionMETA_params
 {
     XrSession session;
@@ -1469,6 +1787,13 @@ struct xrGetSceneMeshBuffersMSFT_params
     XrSceneMSFT scene;
     const XrSceneMeshBuffersGetInfoMSFT *getInfo;
     XrSceneMeshBuffersMSFT *buffers;
+    XrResult result;
+};
+
+struct xrGetSenseDataProviderStateBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrSenseDataProviderStateBD *state;
     XrResult result;
 };
 
@@ -1564,6 +1889,29 @@ struct xrGetSpatialAnchorNameHTC_params
 {
     XrSpace anchor;
     XrSpatialAnchorNameHTC *name;
+    XrResult result;
+};
+
+struct xrGetSpatialAnchorStateML_params
+{
+    XrSpace anchor;
+    XrSpatialAnchorStateML *state;
+    XrResult result;
+};
+
+struct xrGetSpatialEntityComponentDataBD_params
+{
+    XrSenseDataSnapshotBD snapshot;
+    const XrSpatialEntityComponentGetInfoBD *getInfo;
+    XrSpatialEntityComponentDataBaseHeaderBD *componentData;
+    XrResult result;
+};
+
+struct xrGetSpatialEntityUuidBD_params
+{
+    XrSenseDataSnapshotBD snapshot;
+    XrSpatialEntityIdBD entityId;
+    XrUuidEXT *uuid;
     XrResult result;
 };
 
@@ -1701,6 +2049,14 @@ struct xrGetVulkanInstanceExtensionsKHR_params
     XrResult result;
 };
 
+struct xrGetWorldMeshBufferRecommendSizeML_params
+{
+    XrWorldMeshDetectorML detector;
+    const XrWorldMeshBufferRecommendedSizeInfoML *sizeInfo;
+    XrWorldMeshBufferSizeML *size;
+    XrResult result;
+};
+
 struct xrImportLocalizationMapML_params
 {
     XrSession session;
@@ -1727,11 +2083,27 @@ struct xrLoadRenderModelFB_params
     XrResult result;
 };
 
+struct xrLocateBodyJointsBD_params
+{
+    XrBodyTrackerBD bodyTracker;
+    const XrBodyJointsLocateInfoBD *locateInfo;
+    XrBodyJointLocationsBD *locations;
+    XrResult result;
+};
+
 struct xrLocateBodyJointsFB_params
 {
     XrBodyTrackerFB bodyTracker;
     const XrBodyJointsLocateInfoFB *locateInfo;
     XrBodyJointLocationsFB *locations;
+    XrResult result;
+};
+
+struct xrLocateBodyJointsHTC_params
+{
+    XrBodyTrackerHTC bodyTracker;
+    const XrBodyJointsLocateInfoHTC *locateInfo;
+    XrBodyJointLocationsHTC *locations;
     XrResult result;
 };
 
@@ -1843,6 +2215,22 @@ struct xrPerfSettingsSetPerformanceLevelEXT_params
     XrResult result;
 };
 
+struct xrPersistSpatialAnchorAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSpatialAnchorPersistInfoBD *info;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrPersistSpatialAnchorCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrFutureCompletionEXT *completion;
+    XrResult result;
+};
+
 struct xrPersistSpatialAnchorMSFT_params
 {
     XrSpatialAnchorStoreConnectionMSFT spatialAnchorStore;
@@ -1865,6 +2253,22 @@ struct xrPollFutureEXT_params
     XrResult result;
 };
 
+struct xrPublishSpatialAnchorsAsyncML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    const XrSpatialAnchorsPublishInfoML *publishInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrPublishSpatialAnchorsCompleteML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    XrFutureEXT future;
+    XrSpatialAnchorsPublishCompletionML *completion;
+    XrResult result;
+};
+
 struct xrQueryLocalizationMapsML_params
 {
     XrSession session;
@@ -1883,11 +2287,43 @@ struct xrQueryPerformanceMetricsCounterMETA_params
     XrResult result;
 };
 
+struct xrQuerySenseDataAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSenseDataQueryInfoBD *queryInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrQuerySenseDataCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrSenseDataQueryCompletionBD *completion;
+    XrResult result;
+};
+
 struct xrQuerySpacesFB_params
 {
     XrSession session;
     const XrSpaceQueryInfoBaseHeaderFB *info;
     XrAsyncRequestIdFB *requestId;
+    XrResult result;
+};
+
+struct xrQuerySpatialAnchorsAsyncML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    const XrSpatialAnchorsQueryInfoBaseHeaderML *queryInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrQuerySpatialAnchorsCompleteML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    XrFutureEXT future;
+    XrSpatialAnchorsQueryCompletionML *completion;
     XrResult result;
 };
 
@@ -1931,6 +2367,40 @@ struct xrRequestSceneCaptureFB_params
     XrSession session;
     const XrSceneCaptureRequestInfoFB *info;
     XrAsyncRequestIdFB *requestId;
+    XrResult result;
+};
+
+struct xrRequestWorldMeshAsyncML_params
+{
+    XrWorldMeshDetectorML detector;
+    const XrWorldMeshGetInfoML *getInfo;
+    XrWorldMeshBufferML *buffer;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrRequestWorldMeshCompleteML_params
+{
+    XrWorldMeshDetectorML detector;
+    const XrWorldMeshRequestCompletionInfoML *completionInfo;
+    XrFutureEXT future;
+    XrWorldMeshRequestCompletionML *completion;
+    XrResult result;
+};
+
+struct xrRequestWorldMeshStateAsyncML_params
+{
+    XrWorldMeshDetectorML detector;
+    const XrWorldMeshStateRequestInfoML *stateRequest;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrRequestWorldMeshStateCompleteML_params
+{
+    XrWorldMeshDetectorML detector;
+    XrFutureEXT future;
+    XrWorldMeshStateRequestCompletionML *completion;
     XrResult result;
 };
 
@@ -2086,6 +2556,13 @@ struct xrSetSpaceComponentStatusFB_params
     XrResult result;
 };
 
+struct xrSetSystemNotificationsML_params
+{
+    XrInstance instance;
+    const XrSystemNotificationsSetInfoML *info;
+    XrResult result;
+};
+
 struct xrSetTrackingOptimizationSettingsHintQCOM_params
 {
     XrSession session;
@@ -2116,6 +2593,30 @@ struct xrShareSpacesFB_params
     XrResult result;
 };
 
+struct xrShareSpacesMETA_params
+{
+    XrSession session;
+    const XrShareSpacesInfoMETA *info;
+    XrAsyncRequestIdFB *requestId;
+    XrResult result;
+};
+
+struct xrShareSpatialAnchorAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSpatialAnchorShareInfoBD *info;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrShareSpatialAnchorCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrFutureCompletionEXT *completion;
+    XrResult result;
+};
+
 struct xrSnapshotMarkerDetectorML_params
 {
     XrMarkerDetectorML markerDetector;
@@ -2123,9 +2624,57 @@ struct xrSnapshotMarkerDetectorML_params
     XrResult result;
 };
 
+struct xrStartColocationAdvertisementMETA_params
+{
+    XrSession session;
+    const XrColocationAdvertisementStartInfoMETA *info;
+    XrAsyncRequestIdFB *advertisementRequestId;
+    XrResult result;
+};
+
+struct xrStartColocationDiscoveryMETA_params
+{
+    XrSession session;
+    const XrColocationDiscoveryStartInfoMETA *info;
+    XrAsyncRequestIdFB *discoveryRequestId;
+    XrResult result;
+};
+
 struct xrStartEnvironmentDepthProviderMETA_params
 {
     XrEnvironmentDepthProviderMETA environmentDepthProvider;
+    XrResult result;
+};
+
+struct xrStartSenseDataProviderAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSenseDataProviderStartInfoBD *startInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrStartSenseDataProviderCompleteBD_params
+{
+    XrSession session;
+    XrFutureEXT future;
+    XrFutureCompletionEXT *completion;
+    XrResult result;
+};
+
+struct xrStopColocationAdvertisementMETA_params
+{
+    XrSession session;
+    const XrColocationAdvertisementStopInfoMETA *info;
+    XrAsyncRequestIdFB *requestId;
+    XrResult result;
+};
+
+struct xrStopColocationDiscoveryMETA_params
+{
+    XrSession session;
+    const XrColocationDiscoveryStopInfoMETA *info;
+    XrAsyncRequestIdFB *requestId;
     XrResult result;
 };
 
@@ -2142,6 +2691,12 @@ struct xrStopHapticFeedback_params
     XrResult result;
 };
 
+struct xrStopSenseDataProviderBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrResult result;
+};
+
 struct xrStringToPath_params
 {
     XrInstance instance;
@@ -2151,6 +2706,14 @@ struct xrStringToPath_params
 };
 
 struct xrStructureTypeToString_params
+{
+    XrInstance instance;
+    XrStructureType value;
+    char *buffer;
+    XrResult result;
+};
+
+struct xrStructureTypeToString2KHR_params
 {
     XrInstance instance;
     XrStructureType value;
@@ -2238,6 +2801,22 @@ struct xrTryCreateSpatialGraphStaticNodeBindingMSFT_params
     XrResult result;
 };
 
+struct xrUnpersistSpatialAnchorAsyncBD_params
+{
+    XrSenseDataProviderBD provider;
+    const XrSpatialAnchorUnpersistInfoBD *info;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrUnpersistSpatialAnchorCompleteBD_params
+{
+    XrSenseDataProviderBD provider;
+    XrFutureEXT future;
+    XrFutureCompletionEXT *completion;
+    XrResult result;
+};
+
 struct xrUnpersistSpatialAnchorMSFT_params
 {
     XrSpatialAnchorStoreConnectionMSFT spatialAnchorStore;
@@ -2257,6 +2836,22 @@ struct xrUpdatePassthroughColorLutMETA_params
 {
     XrPassthroughColorLutMETA colorLut;
     const XrPassthroughColorLutUpdateInfoMETA *updateInfo;
+    XrResult result;
+};
+
+struct xrUpdateSpatialAnchorsExpirationAsyncML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    const XrSpatialAnchorsUpdateExpirationInfoML *updateInfo;
+    XrFutureEXT *future;
+    XrResult result;
+};
+
+struct xrUpdateSpatialAnchorsExpirationCompleteML_params
+{
+    XrSpatialAnchorsStorageML storage;
+    XrFutureEXT future;
+    XrSpatialAnchorsUpdateExpirationCompletionML *completion;
     XrResult result;
 };
 
