@@ -1204,6 +1204,9 @@ def default_compat_config():
 
                 #CW bug 24913
                 "2620730",
+
+                #CW bug 25730
+                "2882920",
                 ]:
             ret.add("nomfdxgiman")
 
